@@ -24,16 +24,6 @@ it — model training logic will be added in later phases.
    ```
 5. Open your browser to: http://127.0.0.1:5000
 
-## What to check
-- Clicking all three navbar links (Machine Learning / Deep Learning /
-  Generative AI) should work without errors.
-- Uploading a CSV on the ML or DL page should show a success message and
-  save the file into the `uploads/` folder.
 
-## Next phases
-- Phase 2: Add real ML model training to `/ml`
-- Phase 3: Add neural network training to `/dl`
-- Phase 4: Add Apriori (association rule mining)
-- Phase 5: Add Text Generation + NER using Hugging Face pipelines
-- Phase 6: Add voice-based Question Answering
-- Phase 7: Polish and deploy to Render
+
+
