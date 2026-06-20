@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}
+Voice Question Answering
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+```
+<div class="card shadow-lg border-0">
+
+    <div class="card-body text-center">
+
+        <h1 class="mb-3">
+             Voice Question Answering
+        </h1>
+
+        <p class="text-muted mb-4">
+            Ask your question using voice and get an AI-generated answer.
+        </p>
+
+        <form method="POST" onsubmit="startListening()">
+
+            <button
+                id="voiceBtn"
+                type="submit"
+                class="btn btn-danger btn-lg">
+
+                 Ask Question Using Voice
+
+            </button>
+
+        </form>
+
+        <div
+            id="listeningBox"
+            class="alert alert-warning mt-4"
+            style="display:none;">
+
+            <h4> Listening...</h4>
+
+            <p class="mb-0">
+                Please speak your question now.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% if question %}
+
+<div class="card mt-4 shadow-sm border-primary">
+
+    <div class="card-header bg-primary text-white">
+
+        <h4 class="mb-0">
+             Recognized Question
+        </h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <p class="fs-5">
+            {{ question }}
+        </p>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+{% if answer %}
+
+<div class="card mt-4 shadow-sm border-success">
+
+    <div class="card-header bg-success text-white">
+
+        <h4 class="mb-0">
+             Generated Answer
+        </h4>
+
+    </div>
+
+    <div class="card-body">
+
+        <p class="fs-5">
+            {{ answer }}
+        </p>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+<div class="alert alert-info mt-4">
+
+    <strong>Tip:</strong>
+
+    Speak clearly and wait 1–2 seconds after clicking the button before asking your question.
+
+</div>
+```
+
+</div>
+
+<script>
+
+function startListening() {
+
+    document.getElementById("voiceBtn").innerHTML =
+        " Listening...";
+
+    document.getElementById("voiceBtn").disabled = true;
+
+    document.getElementById("listeningBox").style.display =
+        "block";
+}
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Apriori Algorithm
+{% endblock %}
+
+{% block content %}
+
+<h2>Apriori Association Rule Mining</h2>
+
+<p>
+Upload a transaction dataset and generate association rules.
+</p>
+
+<form method="POST"
+      enctype="multipart/form-data">
+
+    <input type="file"
+           name="dataset"
+           accept=".csv"
+           class="form-control mb-3"
+           required>
+
+    <button type="submit"
+            class="btn btn-primary">
+
+        Generate Rules
+
+    </button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}ML Results{% endblock %}
+{% block content %}
+<h2>Machine Learning Results</h2>
+<p>Target column: <strong>{{ target_column }}</strong> &nbsp;|&nbsp; Rows used: {{ n_rows }} &nbsp;|&nbsp; Features: {{ n_features }}</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Test Accuracy</th>
+      <th>Cross-Val Mean</th>
+      <th>Cross-Val Std</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in results %}
+    <tr {% if r.name == best_model %}class="table-success"{% endif %}>
+      <td>{{ r.name }}</td>
+      <td>{{ r.test_accuracy }}%</td>
+      <td>{{ r.cv_mean }}%</td>
+      <td>{{ r.cv_std }}%</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<p><strong>Best model:</strong> {{ best_model }} ({{ best_accuracy }}% test accuracy)</p>
+
+{% if feature_importance_chart %}
+<h4 class="mt-4">Feature Importance</h4>
+<img src="data:image/png;base64,{{ feature_importance_chart }}" class="img-fluid border rounded">
+{% endif %}
+
+<div class="mt-4">
+  <a href="{{ url_for('ml_algorithms') }}" class="btn btn-secondary">Try Another Dataset</a>
+</div>
+{% endblock %}

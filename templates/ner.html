@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}
+NER
+{% endblock %}
+
+{% block content %}
+
+<h2>Named Entity Recognition (NER)</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Enter Text
+        </label>
+
+        <textarea
+            name="text"
+            class="form-control"
+            rows="5"
+            required></textarea>
+
+    </div>
+
+    <button
+        type="submit"
+        class="btn btn-primary">
+
+        Extract Entities
+
+    </button>
+
+</form>
+
+{% if entities %}
+
+<hr>
+
+<h4>Detected Entities</h4>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>Entity</th>
+            <th>Type</th>
+            <th>Confidence</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for item in entities %}
+
+        <tr>
+
+            <td>{{ item.word }}</td>
+
+            <td>{{ item.entity }}</td>
+
+            <td>{{ item.score }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endif %}
+
+{% endblock %}

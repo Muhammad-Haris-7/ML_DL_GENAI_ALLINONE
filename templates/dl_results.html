@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Deep Learning Results{% endblock %}
+
+{% block content %}
+
+<h2>Deep Learning Results</h2>
+
+<div class="card p-3 mb-4">
+
+    <p>
+        <strong>Target Column:</strong>
+        {{ target_column }}
+    </p>
+
+    <p>
+        <strong>Total Rows:</strong>
+        {{ rows }}
+    </p>
+
+    <p>
+        <strong>Total Features:</strong>
+        {{ features }}
+    </p>
+
+    <p>
+        <strong>Neural Network Accuracy:</strong>
+        {{ accuracy }}%
+    </p>
+
+</div>
+
+<h4>Accuracy Curve</h4>
+
+<img src="data:image/png;base64,{{ accuracy_chart }}"
+     class="img-fluid border rounded mb-4">
+
+<h4>Loss Curve</h4>
+
+<img src="data:image/png;base64,{{ loss_chart }}"
+     class="img-fluid border rounded">
+
+<div class="mt-4">
+
+    <a href="{{ url_for('dl_algorithms') }}"
+       class="btn btn-primary">
+
+        Test Another Dataset
+
+    </a>
+
+</div>
+
+{% endblock %}

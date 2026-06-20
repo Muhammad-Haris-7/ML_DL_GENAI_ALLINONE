@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Select Target Column{% endblock %}
+{% block content %}
+<h2>Select Target Column</h2>
+<p>Your dataset <strong>{{ filename }}</strong> was uploaded. Choose which column you want the models to predict (the "target"/label column).</p>
+<form method="POST" action="{{ url_for('ml_train', filename=filename) }}">
+  <select name="target_column" class="form-select mb-3" required>
+    {% for col in columns %}
+      <option value="{{ col }}">{{ col }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit" class="btn btn-primary">Train Models</button>
+</form>
+{% endblock %}

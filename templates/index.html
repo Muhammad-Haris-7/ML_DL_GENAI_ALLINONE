@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+  <h1>AI Project Hub</h1>
+  <p class="lead">Choose a category to get started</p>
+  <div class="d-flex justify-content-center gap-3 mt-4">
+    <a href="{{ url_for('ml_algorithms') }}" class="btn btn-primary btn-lg">Machine Learning</a>
+    <a href="{{ url_for('dl_algorithms') }}" class="btn btn-success btn-lg">Deep Learning</a>
+    <a href="{{ url_for('genai_hub') }}" class="btn btn-warning btn-lg">Generative AI</a>
+  </div>
+</div>
+{% endblock %}

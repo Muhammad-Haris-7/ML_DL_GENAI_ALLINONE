@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}
+Generative AI Hub
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+```
+<div class="text-center mb-5">
+
+    <h1 class="fw-bold text-primary">
+         Generative AI Hub
+    </h1>
+
+    <p class="lead text-muted">
+        Explore Transformer Models, Association Rules, NER and Voice AI
+    </p>
+
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-body text-center">
+
+                <h3></h3>
+
+                <h5>Apriori</h5>
+
+                <p class="text-muted">
+                    Association Rule Mining
+                </p>
+
+                <a href="{{ url_for('apriori_page') }}"
+                   class="btn btn-primary">
+
+                    Open Module
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-body text-center">
+
+                <h3></h3>
+
+                <h5>Text Generation</h5>
+
+                <p class="text-muted">
+                    Generate text using Transformers
+                </p>
+
+                <a href="{{ url_for('text_generation_page') }}"
+                   class="btn btn-success">
+
+                    Open Module
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-body text-center">
+
+                <h3></h3>
+
+                <h5>NER</h5>
+
+                <p class="text-muted">
+                    Named Entity Recognition
+                </p>
+
+                <a href="{{ url_for('ner_page') }}"
+                   class="btn btn-warning">
+
+                    Open Module
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-body text-center">
+
+                <h3></h3>
+
+                <h5>Voice QA</h5>
+
+                <p class="text-muted">
+                    Voice Question Answering
+                </p>
+
+                <a href="{{ url_for('voice_qa_page') }}"
+                   class="btn btn-danger">
+
+                    Open Module
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+{% endblock %}

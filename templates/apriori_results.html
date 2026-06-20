@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}
+Apriori Results
+{% endblock %}
+
+{% block content %}
+
+<h2>Association Rules</h2>
+
+{% if results %}
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>Antecedent</th>
+
+            <th>Consequent</th>
+
+            <th>Support</th>
+
+            <th>Confidence</th>
+
+            <th>Lift</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for row in results %}
+
+        <tr>
+
+            <td>{{ row.antecedents }}</td>
+
+            <td>{{ row.consequents }}</td>
+
+            <td>{{ row.support }}</td>
+
+            <td>{{ row.confidence }}</td>
+
+            <td>{{ row.lift }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% else %}
+
+<div class="alert alert-warning">
+
+    No association rules found.
+
+</div>
+
+{% endif %}
+
+<a href="{{ url_for('apriori_page') }}"
+   class="btn btn-secondary">
+
+    Try Another Dataset
+
+</a>
+
+{% endblock %}

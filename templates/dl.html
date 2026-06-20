@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Deep Learning{% endblock %}
+{% block content %}
+<h2>Deep Learning Algorithms</h2>
+<p>Upload a CSV dataset to train a neural network on it.</p>
+<form method="POST" enctype="multipart/form-data">
+  <input type="file" name="dataset" accept=".csv" class="form-control mb-3" required>
+  <button type="submit" class="btn btn-success">Upload &amp; Run</button>
+</form>
+<p class="text-muted mt-3"><em>Phase 3 will add: preprocessing, MLP/neural network training, and accuracy/loss visualization.</em></p>
+{% endblock %}

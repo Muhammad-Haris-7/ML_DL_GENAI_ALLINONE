@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Deep Learning Configuration{% endblock %}
+
+{% block content %}
+
+<h2>Deep Learning Configuration</h2>
+
+<p>
+Choose the target column that the Neural Network should predict.
+</p>
+
+<form method="POST"
+      action="{{ url_for('dl_train', filename=filename) }}">
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Target Column
+        </label>
+
+        <select name="target_column"
+                class="form-select"
+                required>
+
+            {% for col in columns %}
+
+                <option value="{{ col }}">
+                    {{ col }}
+                </option>
+
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+
+        Train Neural Network
+
+    </button>
+
+</form>
+
+{% endblock %}

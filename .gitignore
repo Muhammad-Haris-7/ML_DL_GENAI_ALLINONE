@@ -1,0 +1,11 @@
+**pycache**/
+*.pyc
+uploads/
+.env
+.vscode/
+.ipynb_checkpoints/
+
+models/
+.cache/
+*.h5
+*.keras
